@@ -1,5 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+
+:root {
+  --bg-color: #1e1f23;
+  --font-color: #595d60;
+  --box-shadow: 3px 4px 20px 0px #1e1f23, -4px -3px 20px #000;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color);
+  color: var(--font-color);
+  font-family: 'Comfortaa', cursive;
+}
+p {
+  font-size: 24px;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: var(--font-color);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  margin: 10px;
+  padding: 10px 20px;
+  box-shadow: var(--box-shadow);
+  line-height: 1.75;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 20px;
 }

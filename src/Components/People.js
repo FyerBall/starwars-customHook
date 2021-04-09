@@ -5,15 +5,19 @@ import Loading from './Loading'
 function People() {
   const { isLoading, data } = useFetch(peopleApi)
   return (
-    <div>
-      <Loading isLoading={isLoading} />
+    <div className='grid'>
+      {isLoading && <Loading />}
       {data.map((person) => {
-        const { birth_year: year, eye_color: eyeColor, name } = person
+        const {
+          birth_year: year,
+          eye_color: eyeColor,
+          name: personName,
+        } = person
         return (
-          <div className='' key={person.name}>
-            <h3>name: {name}</h3>
-            <p>birth year: {year}</p>
-            <p>eye Color: {eyeColor}</p>
+          <div className='card' key={person.name}>
+            <h3>Name: {personName}</h3>
+            <p>Birth Year: {year}</p>
+            <p>Eye Color: {eyeColor}</p>
           </div>
         )
       })}

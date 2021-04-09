@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Loading({ isLoading }) {
+function Loading() {
   return (
     <div>
-      <h1>{isLoading && 'Loading...'}</h1>
+      <h1> Loading...</h1>
     </div>
   )
 }

@@ -5,12 +5,12 @@ import Loading from './Loading'
 function Planets() {
   const { isLoading, data } = useFetch(planetsApi)
   return (
-    <div>
-      <Loading isLoading={isLoading} />
+    <div className='grid'>
+      {isLoading && <Loading />}
       {data.map((planet) => {
         const { name, population, terrain } = planet
         return (
-          <div className='' key={planet.name}>
+          <div className='card' key={planet.name}>
             <h3>name: {name}</h3>
             <p>population: {population}</p>
             <p>terrain: {terrain}</p>

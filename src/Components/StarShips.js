@@ -5,15 +5,15 @@ import Loading from './Loading'
 function StarShips() {
   const { isLoading, data } = useFetch(starshipsApi)
   return (
-    <div>
-      <Loading isLoading={isLoading} />
+    <div className='grid'>
+      {isLoading && <Loading />}
       {data.map((ship) => {
         const { name, crew, passengers } = ship
         return (
-          <div className='' key={name}>
-            <h1>name: {name}</h1>
-            <p>crew: {crew}</p>
-            <p>passengers: {passengers}</p>
+          <div className='card' key={name}>
+            <h3>Name: {name}</h3>
+            <p>Crew: {crew}</p>
+            <p>Passengers: {passengers}</p>
           </div>
         )
       })}
